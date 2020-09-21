@@ -1,89 +1,76 @@
-*{
-    margin:0;
-    font-family: 'Titillium Web', sans-serif;
-}
-
 body{
-    background: rgb(216, 229, 240);
-    color:#77D9AB;
-}
-
-.title{
-    width: 500px;
-    color:#0869A6;
-    margin:3% auto;
-}
-
-.content{
-    width: 580px;
-    margin: 0 auto;
-    background-color:#323f47;
-    padding: 3%;
-    padding-left: 6%;
-}
-
-.second-title{
-    text-align:left;
-    margin: 2% 0;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.4;
+    /* font-size: 14px; */
     font-weight: 100;
+    padding: 0px;
+}
+#wrap{
+    position: relative;
+    max-width: 690px;
+    height: auto;
+    /* border: 2px solid #000000; */
+    margin: 50px auto;
+    padding: 30px;
+    box-sizing: border-box;
+   background:#ffa82e ;
 }
 
-.form{
-    padding: 5px;
+#wrap:after{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    /* border-top: 2px solid #000000; */
+    border-bottom: 0px solid #ffffff;
+    /* border-left: 2px solid #000000; */
+    border-right: 0px solid #ffffff;
+    top: 0%;
+    left: 10%;
+    margin-left: -25px;
+    content: '';
+    transform: rotate(45deg);
+    margin-top: -25px;
+    background-color:#ffa82e;
+}
+#credit{
+  color: green;
 }
 
-.form-line{
-    display: inline-flex;
-    padding: 5px 0px;
+tr{
+    color: black;
 }
 
-.left{
-    float: left;
+.button-chart{
+  border-radius: 50%;
+  
+}
+h1{
+  font-family: 'Solway', serif;
+ margin-top: 50px;
+ margin-left: 50px;
+}
+ h4{
+  columns: #000000;;
+}
+.modal-body{
+  color: aqua;
+  
+}
+.new-item{
+  font-family: 'Balsamiq Sans', cursive;
+}
+#expense-amount{
+  font-weight: 600;
+}
+.myTbl{
+  overflow-x: auto;
 }
 
-.right{
-    float:right;
-    margin-right: 100px;
+.button-chart{
+  background-color: #000000;
+  color: #ffffff;
 }
-
-input, select{
-    width: 130px;
-    margin-left: 10px;
-    cursor: text;
+#credit{
+  color: green;
 }
-
-
-/* table style */
-table{
-    width: 100%;
-}
-
-thead{
-    background-color:#042159;
-    line-height: 30px;
-}
-
-/* Button */
-
-button{
-    width: 200px;
-    color:#fff; 
-    padding: 10px;
-    text-align: center;
-    font-size: 1.1em;
-    line-height: 20px;
-    background-color: #04BF8A;
-    border-radius: 5px;
-    margin: 14px 25%;
-    cursor: pointer;
-}
-
-a{
-    text-decoration: underline;
-    align-content: space-between;
-    cursor: pointer;
-}
-.ModifyButton{
-    margin-left: 2em;
-    text-decoration: underline;
-}
+   

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- googlefont -->
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=Solway:wght@700&display=swap"
+        rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- bootstrap script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- favicon -->
+    <link href="favicon.png" rel="icon">
+
+    <!-- main css -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container-sm">
+        <header>
+            <h1 class="title">Expense Tracker</h1>
+            <header>
+                <section id="wrap">
+                    <div class="row">
+                        <h3 class="new-item col-8 second-title">Add a new item: </h3>
+                        <div class="col-4 text-center mb-1 " id="expense">
+                            <h6 class="text-uppercase info-title">expenses</h6>
+                            <span class="expense-icon"><i class="fa fa-credit-card-alt" id="credit"
+                                    aria-hidden="true"></i></span>
+                            <h4 class="text-uppercase mt-1 budget"><span>$ </span><span id="expense-amount">0</span>
+                            </h4>
+
+                        </div>
+
+
+                        <form id="exp-Form">
+                            <div class="form-group row">
+                                <label for="Title" class="col-form-label ml-4 mr-2">Type</label>
+                                <div class="input-group mb-3 w-25">
+                                    <select class="custom-select" id="type">
+                                        <option value="chooseOne" selected>Choose...</option>
+                                        <option value="card">Card</option>
+                                        <option value="cash">Cash</option>
+                                        <option value="cryptocoin">Cryptocoin</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <label for="name" class="report col-form-label ml-4 mr-3 ">Report</label>
+                                <input class=" col form-control form-control w-25 " id="name" type="text"
+                                    placeholder="Report..." autocomplete="off" autocapitalize="capitalize">
+                            </div>
+                            <div class="form-group row">
+                                <label for="Date" class=" col-form-label ml-4 mr-2">Date</label>
+                                <input class="col form-control form-control  w-25  " id="date" type="date">
+                                <label for="Amount" class=" col-form-label ml-4 mr-2">Amount</label>
+                                <input class="col form-control form-control  w-25  " id="amount" type="number"
+                                    placeholder="Amount..." oninput="this.value = Math.abs(this.value)"
+                                    autocomplete="off">
+                            </div>
+                            <button type="submit" id="add" class=" button-save btn btn-success mb-5 ml-5 w-25"><i
+                                    class="fa fa-plus" aria-hidden="true"></i></button>
+
+                            <!-- Trigger the modal with a button -->
+                            <button type="button" class="button-chart btn btn-lg mb-5 ml-5 mr-1 float-right"
+                                data-toggle="modal" data-target="#myModal"><i class="fa fa-bar-chart"
+                                    aria-hidden="true"></i></button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog">
+
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Chart <i class="fa fa-line-chart"
+                                                    aria-hidden="true"></i>
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div>
+
+                                                <canvas id="transactionsChart"></canvas>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                        <div class="col-12 myTbl">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Report</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <!-- <th>Options</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody id="expenseTable">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <!-- custom js -->
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
